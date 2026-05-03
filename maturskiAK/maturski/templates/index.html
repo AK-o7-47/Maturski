@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacija sedišta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <h1>
+                Rezervacija sedišta - let {{ let.broj_leta }}
+                ({{ let.polaziste_grad }} - {{ let.odrediste_grad }})
+            </h1>
+        </div>
+
+        <div class="header-right">
+            <a id="pocetnaStrana" href="{{ url_for('let_detalji', let_id=let.id) }}">Nazad na detalje leta</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="levastrana">
+            <div class="opcije">
+    <div>
+        <h2 id="nazivAviona">{{ avion.naziv }} (ukupno {{ avion.brojSedista }} sedišta)</h2>
+        <p id="slobodnaMestaInfo">Trenutno slobodnih mesta: {{ let.broj_slobodnih_mesta }}</p>
+    </div>
+</div>
+
+            <div id="avion"></div>
+
+            <div class="forma">
+               <form id="formaZaRezervaciju" style="display:none;">
+    <h3>Rezervacija sedišta: <span id="izabranoSediste"></span></h3>
+    <p style="margin-bottom: 10px; text-align:center;">
+        Podaci su automatski preuzeti iz vašeg naloga i po potrebi ih možete izmeniti.
+    </p>
+    <input type="text" id="ime" placeholder="Ime" value="{{ korisnik.ime }}" required><br><br>
+    <input type="text" id="prezime" placeholder="Prezime" value="{{ korisnik.prezime }}" required><br><br>
+    <input type="text" id="pasos" placeholder="Broj pasoša" required><br><br>
+    <button type="submit">Rezerviši</button>
+</form>
+            </div>
+
+            <div class="avionskaKarta">
+                <div id="karta" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="desnastrana">
+    <button id="prikaziRezervacije">Prikaži rezervacije</button>
+    <div id="listaRezervacija" style="display:none;"></div>
+
+    {% if session_uloga == 'admin' %}
+        <button id="reset">Reset svih rezervacija</button>
+    {% endif %}
+</div>
+    </div>
+
+    <div class="footer">
+        <p>Maturski rad Aleksa Kostadinović</p>
+    </div>
+
+    <script>
+        const letId = {{ let.id }};
+        const avionInfo = {{ avion | tojson }};
+        const STIKER_URL = "{{ url_for('static', filename='img/stiker.png') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
