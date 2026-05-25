@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #1f1f1f;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #221853;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+footer {
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 40px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.pretraga-box,
+.rezultati-box,
+.details-box,
+.table-box,
+.form-box {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px;
+}
+
+.pretraga-box h2,
+.rezultati-box h2,
+.details-box h2 {
+    margin-bottom: 20px;
+    color: #221853;
+}
+
+.search-form,
+.crud-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.search-form input,
+.search-form select,
+.search-form button,
+.crud-form input,
+.crud-form select,
+.crud-form button,
+.crud-form a {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.search-form button,
+.crud-form button,
+.detalji-btn,
+.top-actions a,
+.actions a,
+.crud-form a,
+table a,
+.admin-links a {
+    background: #221853;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.search-form button:hover,
+.crud-form button:hover,
+.detalji-btn:hover,
+.top-actions a:hover,
+.actions a:hover,
+.crud-form a:hover,
+table a:hover,
+.admin-links a:hover {
+    background: aquamarine;
+    color: #0e0633;
+}
+
+.admin-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-links a {
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.flight-card {
+    background: #f8f9ff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.flight-card h3 {
+    margin-bottom: 15px;
+    color: #221853;
+}
+
+.flight-card p {
+    margin-bottom: 10px;
+}
+
+.detalji-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.details-box p {
+    margin-bottom: 12px;
+}
+
+.details-box hr {
+    margin: 15px 0;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.top-actions a {
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background: #221853;
+    color: white;
+}
+
+table a {
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.admin-links span {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+@media (max-width: 768px) {
+    .top-actions,
+    .admin-links {
+        flex-direction: column;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
